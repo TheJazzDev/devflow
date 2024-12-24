@@ -1,7 +1,29 @@
-const Home = () => (
-  <h1 className="text-3xl font-black text-white">
-    Welcome to the world of NextJS 15
-  </h1>
-)
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default Home
+const Home = () => (
+  <>
+    <h1 className="text-primary-100 font-black">
+      Welcome to the world of NextJS 15
+    </h1>
+    <DropdownMenu>
+      <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Billing</DropdownMenuItem>
+        <DropdownMenuItem>Team</DropdownMenuItem>
+        <DropdownMenuItem>Subscription</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  </>
+);
+
+export default Home;
