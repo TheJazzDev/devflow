@@ -8,6 +8,7 @@ import ROUTES from "@/constants/routes";
 import { getQuestions } from "@/lib/actions/question.action";
 // import DataRenderer from "@/components/DataRenderer";
 import { EMPTY_QUESTION } from "@/constants/states";
+import HomeFilter from "@/src/components/filters/HomeFilter";
 
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
@@ -32,8 +33,7 @@ const Home = async ({ searchParams }: SearchParams) => {
 
         <Button
           className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900"
-          asChild
-        >
+          asChild>
           <Link href={ROUTES.ASK_QUESTION}>Ask a Question</Link>
         </Button>
       </section>
@@ -45,7 +45,10 @@ const Home = async ({ searchParams }: SearchParams) => {
           otherClasses="flex-1"
         />
       </section>
-      {/* <HomeFilter />
+
+      <HomeFilter />
+      
+      {/*
 
       <DataRenderer
         success={success}
